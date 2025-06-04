@@ -4,3 +4,8 @@
 
 /.vs/BreakTimer/v17
 /BreakTimer/.vs/BreakTimer
+
+# Ignore build outputs and Visual Studio settings
+bin/
+obj/
+.vs/
