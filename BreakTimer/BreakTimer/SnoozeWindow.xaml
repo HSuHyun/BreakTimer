@@ -1,0 +1,31 @@
+﻿<Window x:Class="BreakTimer.SnoozeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BreakTimer"
+        mc:Ignorable="d"
+        Title="스누즈"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Width="280" Height="120"
+        Topmost="True"
+        ShowInTaskbar="False"
+        AllowsTransparency="True"
+        Background="#DD333333">
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Name="txtCountdown" 
+                       FontSize="14" Foreground="White" Margin="0 0 0 8"
+                       TextAlignment="Center"/>
+            <TextBlock Text="쉬는 시간 1분 전입니다." 
+                       Foreground="White" FontSize="16" Margin="0 0 0 10"
+                       TextAlignment="Center"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="스누즈" Width="100" Margin="5" Click="Snooze_Click" x:Name="snoozeButton"/>
+                <Button Content="무시" Width="80" Margin="5" Click="Dismiss_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,37 @@
+﻿<Window x:Class="BreakTimer.OverlayWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="#66000000"
+        Topmost="True"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        WindowState="Maximized"
+        Opacity="0.6">
+
+    <Grid>
+        <!-- 루틴 텍스트 -->
+        <TextBlock Name="txtRoutine"
+                   FontSize="28"
+                   Foreground="White"
+                   TextAlignment="Center"
+                   TextWrapping="Wrap"
+                   Padding="60"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+
+        <!-- 버튼 컨테이너: 클릭 가능 영역 -->
+        <Grid IsHitTestVisible="True"
+              VerticalAlignment="Top"
+              HorizontalAlignment="Right"
+              Margin="0,20,20,0"
+              Width="160"
+              Height="80">
+            <StackPanel Orientation="Vertical">
+                <Button Content="스누즈" Click="Snooze_Click" Margin="0,0,0,5" x:Name="snoozeBtn"/>
+                <Button Content="닫기" Click="Close_Click"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

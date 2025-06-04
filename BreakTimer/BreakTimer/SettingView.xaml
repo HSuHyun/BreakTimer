@@ -1,0 +1,44 @@
+﻿<Window x:Class="BreakTimer.SettingView"
+        Title="휴식 타이머 설정"
+        Height="450" Width="500"
+        ResizeMode="NoResize"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BreakTimer"
+        mc:Ignorable="d">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="0 5">
+            <Label Content="작업 시간 (분):" Width="120"/>
+            <TextBox Name="txtWorkTime" Width="100"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="0 5">
+            <Label Content="휴식 시간 (분):" Width="120"/>
+            <TextBox Name="txtBreakTime" Width="100"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="0 5">
+            <Label Content="스누즈 연장 (분):" Width="120"/>
+            <TextBox Name="txtSnoozeTime" Width="100"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Margin="0 10">
+            <Label Content="스트레칭 루틴"/>
+            <RichTextBox Name="rtbStretchRoutine" Height="200"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 10">
+            <Button Content="저장" Width="80" Margin="5" Click="SaveSettings"/>
+        </StackPanel>
+    </Grid>
+</Window>
