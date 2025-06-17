@@ -236,7 +236,12 @@ namespace BreakTimer
                     overlay = new OverlayWindow(stretchText, snoozeMinutes, false);
                 }
 
-                overlay.OnSnoozeRequested = () => workTimer.AddTime(TimeSpan.FromMinutes(snoozeMinutes));
+                overlay.OnSnoozeRequested = () =>
+                {
+                    workTimer.AddTime(TimeSpan.FromMinutes(snoozeMinutes));
+                    // allow snooze popup to reappear for the newly added time
+                    snoozeAlreadyShown = false;
+                };
                 overlay.OnClosedByUser = () => {
                     CloseOverlay();
                     workTimer.Start(workMinutes);
@@ -265,6 +270,8 @@ namespace BreakTimer
             snoozeWindow.OnSnoozeRequested = () =>
             {
                 workTimer.AddTime(TimeSpan.FromMinutes(snoozeMinutes));
+                // reset flag so window can appear again if needed
+                snoozeAlreadyShown = false;
                 CloseSnoozeWindow();
             };
 
