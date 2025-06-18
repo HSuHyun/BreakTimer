@@ -244,6 +244,7 @@ namespace BreakTimer
                 };
                 overlay.OnClosedByUser = () => {
                     CloseOverlay();
+                    breakTimer.Stop();
                     workTimer.Start(workMinutes);
                     snoozeAlreadyShown = false;
                     this.isAway = false;
