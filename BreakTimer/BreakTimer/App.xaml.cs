@@ -163,7 +163,11 @@ namespace BreakTimer
             var exitItem = new ToolStripMenuItem("종료");
             exitItem.Click += (s, e) =>
             {
-                notifyIcon.Visible = false;
+                if (notifyIcon != null)
+                {
+                    notifyIcon.Dispose();
+                    notifyIcon = null;
+                }
                 Shutdown();
             };
             contextMenu.Items.Add(exitItem);
@@ -311,6 +315,16 @@ namespace BreakTimer
             shortcut.WindowStyle = 1;
             shortcut.Description = "BreakTimer 자동 시작";
             shortcut.Save();
+        }
+
+        protected override void OnExit(ExitEventArgs e)
+        {
+            if (notifyIcon != null)
+            {
+                notifyIcon.Dispose();
+                notifyIcon = null;
+            }
+            base.OnExit(e);
         }
     }
 }
