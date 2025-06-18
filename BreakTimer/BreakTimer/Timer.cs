@@ -18,8 +18,13 @@ namespace BreakTimer
 
         public void Start(int minutes)
         {
-            timer?.Stop();
-            timeLeft = TimeSpan.Zero;
+            if (timer != null)
+            {
+                timer.Stop();
+                timer.Tick -= Tick;
+                timer = null;
+            }
+
             timeLeft = TimeSpan.FromMinutes(minutes);
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
