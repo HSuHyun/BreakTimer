@@ -29,12 +29,9 @@ namespace BreakTimer
 
         private WorkTimer workTimer;
         private RestTimer breakTimer;
-        private bool isPaused = false;
         private int workMinutes = 90;
-        private int breakMinutes = 5; 
+        private int breakMinutes = 5;
         private bool isAway = false;
-
-        private bool isWorking = true;
 
         private int snoozeMinutes = 5;
         private string stretchText = "";
