@@ -60,6 +60,16 @@ namespace BreakTimer
         private TimeSpan timeLeft;
         private DispatcherTimer timer;
 
+        public void Stop()
+        {
+            if (timer != null)
+            {
+                timer.Stop();
+                timer = null;
+            }
+            timeLeft = TimeSpan.Zero;
+        }
+
         public void Start(int minutes)
         {
             timeLeft = TimeSpan.FromMinutes(minutes);
