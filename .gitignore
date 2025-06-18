@@ -4,3 +4,6 @@
 
 /.vs/BreakTimer/v17
 /BreakTimer/.vs/BreakTimer
+
+/BreakTimer/bin/
+/BreakTimer/obj/
