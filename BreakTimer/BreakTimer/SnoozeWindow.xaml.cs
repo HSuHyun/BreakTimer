@@ -49,6 +49,7 @@ namespace BreakTimer
             if (remainingSeconds <= 0)
             {
                 countdownTimer.Stop();
+                OnDismissed?.Invoke();
                 this.Close(); // 자동 종료
             }
             else
